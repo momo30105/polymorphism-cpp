@@ -1,2 +1,2 @@
 # polymorphism-cpp
-使用多型計算面積
+物件導向 cpp 使用多型寫法計算面積
