@@ -1,31 +1,31 @@
-#include <iostream>
-#include <stdlib.h>
+#include <iostream>
+#include <stdlib.h>
 using namespace std;
-class compute_area //µêÀÀÃş§O
+class compute_area //è™›æ“¬é¡åˆ¥
 {
 public:
 	double area;
 	double pen;
-	virtual void get_area() = 0; //¯ÂµêÀÀ¨ç¦¡ 
-	virtual void get_value() = 0; //¯ÂµêÀÀ¨ç¦¡ 
-	virtual void get_pen() = 0; //¯ÂµêÀÀ¨ç¦¡ 
+	virtual void get_area() = 0; //ç´”è™›æ“¬å‡½å¼
+	virtual void get_value() = 0; //ç´”è™›æ“¬å‡½å¼
+	virtual void get_pen() = 0; //ç´”è™›æ“¬å‡½å¼
 	void print_area()
 	{
-		cout << "­±¿n:" << area << endl;
+		cout << "é¢ç©:" << area << endl;
 	}
 	void print_pen()
 	{
-		cout << "©Pªø:" << pen << endl;
+		cout << "å‘¨é•·:" << pen << endl;
 	}
 };
-class Rect :public compute_area   //class Rect Ä~©Ó¦Û compute_area
+class Rect :public compute_area   //class Rect ç¹¼æ‰¿è‡ª compute_area
 {
 public:
 	double x;
 	double y;
 	void get_area()
 	{
-		area = x*y;	//¯x§Î­±¿n:ªø*¼e
+		area = x*y;	//çŸ©å½¢é¢ç©:é•·*å¯¬
 	}
 	void get_pen()
 	{
@@ -33,38 +33,38 @@ public:
 	}
 	void get_value()
 	{
-		cout << "½Ğ¿é¤Jªø:";
+		cout << "è«‹è¼¸å…¥é•·:";
 		cin >> x;
-		cout << "½Ğ¿é¤J¼e:";
+		cout << "è«‹è¼¸å…¥å¯¬:";
 		cin >> y;
 	}
 };
-class Circle :public Rect	//class Circle Ä~©Ó¦Û Rect
+class Circle :public Rect	//class Circle ç¹¼æ‰¿è‡ª Rect
 {
 public:
 	double x;
 	void get_area()
 	{
-		area = x*x*3.14;	//¶êªº­±¿n:¥b®|¥­¤è*3.14
+		area = x*x*3.14;	//åœ“çš„é¢ç©:åŠå¾‘å¹³æ–¹*3.14
 	}
 	void get_pen()
 	{
-		pen = (x * 2)*3.14;		//¶êªº©Pªø:ª½®|*3.14
+		pen = (x * 2)*3.14;		//åœ“çš„å‘¨é•·:ç›´å¾‘*3.14
 	}
 	void get_value()
 	{
-		cout << "½Ğ¿é¤J¥b®|:";
+		cout << "è«‹è¼¸å…¥åŠå¾‘:";
 		cin >> x;
 	}
 };
-class Triangle :public compute_area		//class Triangle Ä~©Ó¦Û compute_area
+class Triangle :public compute_area		//class Triangle ç¹¼æ‰¿è‡ª compute_area
 {
 public:
 	double x;
 	double y;
 	void get_area()
 	{
-		area = x*y / 2;	//¤T¨¤§Î­±¿n:©³*°ª/2
+		area = x*y / 2;	//ä¸‰è§’å½¢é¢ç©:åº•*é«˜/2
 	}
 	void get_pen()
 	{
@@ -72,9 +72,9 @@ public:
 	}
 	void get_value()
 	{
-		cout << "½Ğ¿é¤Jµ¥¸y¤T¨¤§Î©³:";
+		cout << "è«‹è¼¸å…¥ç­‰è…°ä¸‰è§’å½¢åº•:";
 		cin >> x;
-		cout << "½Ğ¿é¤Jµ¥¸y¤T¨¤§Î°ª:";
+		cout << "è«‹è¼¸å…¥ç­‰è…°ä¸‰è§’å½¢é«˜:";
 		cin >> y;
 	}
 };
@@ -97,12 +97,12 @@ int main(void)
 	Rect* A = new Rect;
 	Circle* B = new Circle;
 	Triangle *C = new Triangle;
-	InputData(A); //¥i§ï¼g¬°A->get_value(); 
-	PrintArea(A); //¥i§ï¼g¬°A->get_area(); A->print_area(); 
+	InputData(A); //å¯æ”¹å¯«ç‚ºA->get_value();
+	PrintArea(A); //å¯æ”¹å¯«ç‚ºA->get_area(); A->print_area();
 	PrintPen(A);
 	cout << "---------------" << endl;
-	InputData(B); //¥i§ï¼g¬°B->get_value(); 
-	PrintArea(B); //¥i§ï¼g¬°B->get_area(); B->print_area();
+	InputData(B); //å¯æ”¹å¯«ç‚ºB->get_value();
+	PrintArea(B); //å¯æ”¹å¯«ç‚ºB->get_area(); B->print_area();
 	PrintPen(B);
 	cout << "---------------" << endl;
 	InputData(C);
